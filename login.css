@@ -1,0 +1,270 @@
+:root {
+    /* Backgrounds */
+    --background: #090807;
+    --color-surface: #100e0b;
+    --input-background: #17130f;
+  
+    /* Brand */
+    --accent: #d1af55;
+    --on-accent: #19130a;
+  
+    /* Text */
+    --text-primary: #f3eee5;
+    --text-secondary: #a99e8f;
+    --text-muted: #948879;
+  
+    /* Borders and dividers */
+    --border: #352c22;
+  
+    /* Image overlays */
+    --color-scrim-strong: rgb(9 8 7 / 93.33%);
+    --color-scrim-medium: rgb(9 8 7 / 56.47%);
+    --color-scrim-light: rgb(9 8 7 / 26.67%);
+    --color-scrim-signature: rgb(9 8 7 / 73.33%);
+    --color-scrim-transparent: rgb(9 8 7 / 0%);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    background: var(--background);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+header {
+    padding: 2rem 3.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+header .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Pushes children to far left and far right */
+    align-items: center;
+    
+}
+
+header .nav-btn .return {
+    margin-left: auto;
+}
+
+a, 
+a:link, 
+a:visited {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+
+.forgot-link,
+.form-change a {
+    color: var(--accent); /* Gold brand color */
+    font-weight: 500;
+}
+
+a:hover,
+.forgot-link:hover,
+.form-change a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.header-container .logo {
+    display: flex;
+    gap: 5px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+footer {
+    padding: 2rem 3.5rem;
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between; /* Pushes children to far left and far right */
+    align-items: center;            /* Vertically aligns items in the middle */
+    color: var(--text-muted);
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+
+#left {
+    background-image: 
+        linear-gradient(
+            to bottom,
+            rgba(9, 8, 7, 0.95) 0%,
+            rgba(9, 8, 7, 0.70) 20%,
+            rgba(9, 8, 7, 0.30) 100%
+        ),
+        url('login-image.jpeg');
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Anchors the image specifically inside #left */
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 2.5rem 3.5rem;
+    border-right: 1px solid var(--border);
+    min-height: 80vh; /* Changed from 80vh so it fills the parent container completely */
+}
+.accent-text {
+    margin: 4rem 0 .75rem 0;
+    color: var(--accent);
+    font-size: 0.85rem;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0.25rem; 
+    font-size: 5rem;        
+    font-weight: 500;
+    line-height: 1.05;      
+}
+
+#left h1 span {
+    display: block;
+}
+
+#left h1 .newline-coloured {
+    color: var(--accent);
+}
+
+.muted-desc {
+    margin-top: 1.25rem;          /* Removes default paragraph top margin pushing it down */
+    width: 50%;
+    color: var(--text-muted);
+    line-height: 1.5;       /* Keeps description readable */
+}
+
+#left .slogan {
+    font-size: 1.25rem;
+}
+
+#left .left-bottom-page {
+    margin-top: auto;
+}
+
+#left .left-bottom-page .accent-text{
+    margin-top: 0;
+    padding: 1rem 0 .5rem 0;
+}
+
+#right {
+    width: 50%;
+    min-height: 80vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    padding: 3rem 3.5rem;
+    box-sizing: border-box;
+    background: var(--background);
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-header h2 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 4rem;
+}
+
+#right .muted-desc {
+    margin: 0 0 2rem 0;
+    width: 75%;
+}
+
+.form-box{
+    display: none;
+    flex-direction: column;
+}
+
+.form-box.active {
+    display: flex;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="text"],
+
+.register-form input[type="email"],
+.register-form input[type="password"],
+.register-form input[type="text"] {
+    margin-bottom: 1.25rem;
+    padding-left: 0.75rem;
+    height: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--input-background);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    border-radius: 6px;
+}
+
+.login-form input[type="checkbox"],
+.login-form input[type="radio"],
+
+.register-form input[type="checkbox"],
+.register-form input[type="radio"]{
+    margin: 0;
+    height: auto;
+}
+
+.login-form label, .register-form label {
+    margin-bottom: .25rem;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between; /* Pushes children to far left and far right */
+}
+
+.submit-btn {
+    padding-left: 0.75rem;
+    height: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    border-radius: 6px;
+    border-style: none;
+}
